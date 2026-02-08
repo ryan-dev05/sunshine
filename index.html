@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 📱 IMPORTANT FOR MOBILE (WhatsApp / Instagram) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Be My valentines?</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    /* 💖 HER PHOTO */
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1.1rem;
+      padding: 14px 26px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      min-width: 130px;
+      transition: transform 0.2s;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: white;
+      color: #ff4d6d;
+      position: relative;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    /* 📱 Extra polish for very small screens */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+
+    <!-- 📸 ADD HER PHOTO -->
+    <img src="c:\Users\ryan\Downloads\Phone Link\IMG-20250821-WA0003 (2).jpg" alt="Her photo" class="photo">
+
+    <h1>Hey my love 💕</h1>
+
+    <!-- ✍️ WRITE YOUR OWN WORDS -->
+    <p>
+      You make my days brighter and my life better just by being in it.
+      I smile more because of you, and I’m grateful for every moment we share.
+      and since you came into my life i have been happy,
+      will you be my valentines?
+    </p>
+
+    <p><strong>Will you be my Valentine? 🌹</strong></p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💖</button>
+      <button class="no" onmouseover="moveButton(this)">No 😅</button>
+    </div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.body.innerHTML = `
+        <div style="
+          min-height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          font-family:'Segoe UI', sans-serif;
+          background:linear-gradient(135deg,#ff758c,#ff7eb3);
+          color:white;
+          padding:20px;">
+          <div>
+            <h1 style="font-size:2rem;">She said YES 💘🎉</h1>
+            <p style="font-size:1.2rem; line-height:1.5;">
+              You just made me the happiest person alive ❤️<br>
+              Happy Valentine’s Day, my love.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    function moveButton(button) {
+      const padding = 20;
+      const x = Math.random() * (window.innerWidth - button.offsetWidth - padding);
+      const y = Math.random() * (window.innerHeight - button.offsetHeight - padding);
+      button.style.position = "absolute";
+      button.style.left = x + "px";
+      button.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
